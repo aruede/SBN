@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# SBN_BASE=`pwd` # TODO: compute?
-
 if [ $# -lt 1 ]
 then
     echo "$0 <cFS base>"
@@ -17,18 +15,10 @@ then
     exit 2
 fi
 
-# mkdir -p "${APP_BASE}/sbn"
-# ln -sf "${SBN_BASE}/fsw" "${APP_BASE}/sbn/"
-# ln -sf "${SBN_BASE}/ut-stubs" "${APP_BASE}/sbn/"
-# ln -sf "${SBN_BASE}/unit-test" "${APP_BASE}/sbn/"
-# ln -sf "${SBN_BASE}/CMakeLists.txt" "${APP_BASE}/sbn/"
-
 for protocol in ${APP_BASE}/sbn/modules/protocol/*
 do
     b=`basename ${protocol}`
     l="${APP_BASE}/sbn_${b}"
-    # rm "${l}"
-    # ln -sf "${protocol}" "${l}"
     cp -r "${protocol}" "${l}"
 done
 
@@ -36,7 +26,5 @@ for filter in ${APP_BASE}/sbn/modules/filter/*
 do
     b=`basename ${filter}`
     l="${APP_BASE}/sbn_f_${b}"
-    # rm "${l}"
-    # ln -sf "${filter}" "${l}"
     cp -r "${filter}" "${l}"
 done

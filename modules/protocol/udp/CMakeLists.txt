@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.6.4)
+cmake_minimum_required(VERSION 2.8.12)
 project(SBN_UDP C)
 
 if(NOT(IS_DIRECTORY ${SBN_APP_SOURCE_DIR}))
